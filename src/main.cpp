@@ -973,22 +973,23 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 {
 
     int64_t nSubsidy = 400 * COIN;
- 
+
     if(pindexBest->nHeight < 1)
     {
-    nSubsidy = 1800000 * COIN;
+        nSubsidy = 1800000 * COIN; // 1,800,000
     }
-    else if(pindexBest->nHeight < 810)
+        else if(pindexBest->nHeight < 810)
     {
-    nSubsidy = 20 * COIN;
+        nSubsidy = 20 * COIN; // 809 blocks of 20 = 16180 total = 1,816,180
     }
-    else if(pindexBest->nHeight < 26267)
+    else if(pindexBest->nHeight < 26269)
     {
-    nSubsidy = 400 * COIN;
+        nSubsidy = 400 * COIN; // 25459 blocks of 400 = 10183600 total = 11999780
     }
-    else if(pindexBest->nHeight < 26268)
+    else if(pindexBest->nHeight < 26270)
     {
-    nSub
+        nSubsidy = 220 * COIN; // 1 block of 220 total = 12000000
+    }
 
       
     if (fDebug && GetBoolArg("-printcreation"))
